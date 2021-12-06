@@ -1,4 +1,4 @@
-// 1.1 - Inclus„o das bibliotecas
+// 1.1 - Inclus√£o das bibliotecas
 	#include <stdio.h>
 	#include <stdlib.h>
 	#include <string.h>
@@ -6,22 +6,22 @@
 	
 	#include "jogodavida.h"
 
-// 1.2 -DefiniÁ„o da dimenÁ„o so mundo para o modelo
+// 1.2 -Defini√ß√£o da dimen√ß√£o so mundo para o modelo
 
 	#define LARGURA_MUNDO 39
 	#define ALTURA_MUNDO 20
 
-// RepresentaÁ„o de caracteres de estado da celula
+// Representa√ß√£o de caracteres de estado da celula
 
 	#define  CHAR_VIVA '*' 
 	#define  CHAR_MORTA ' '
 
-//Armazenamento dos estados actuais da celula e a proxima geraÁ„o de estado no mundo
+//Armazenamento dos estados actuais da celula e a proxima gera√ß√£o de estado no mundo
 
 	static int mundo[LARGURA_MUNDO][ALTURA_MUNDO];
 	static int proximos_estados[LARGURA_MUNDO][ALTURA_MUNDO];
 	
-// 1.5-  ImplementaÁ„o da funÁ„o iniciar_Mundo
+// 1.5-  Implementa√ß√£o da fun√ß√£o iniciar_Mundo
 
 	void iniciar_mundo(void){
 		int i, j;
@@ -30,7 +30,7 @@
 			for(j=0; j<ALTURA_MUNDO; j++)
 				mundo[i][j]=proximos_estados[i][j]=MORTA;
 				
-	//Padr„o contante
+	//Padr√£o contante
 	mundo[1][2]=VIVA;
 	mundo[3][1]=VIVA;
 	mundo[3][2]=VIVA;
@@ -38,7 +38,7 @@
 	mundo[2][3]=VIVA;
 	}
 
-// 1.6 ImplementaÁ„o da funÁ„o que retornam a dimenÁ„o do mundo
+// 1.6 Implementa√ß√£o da fun√ß√£o que retornam a dimen√ß√£o do mundo
 
 int get_mundo_largura(void){
 		return LARGURA_MUNDO;
@@ -47,7 +47,7 @@ int get_mundo_altura(void){
 		return ALTURA_MUNDO;
 }
 
-// 1.7 ImplementaÁ„o da funÁ„o get_estado_celula
+// 1.7 Implementa√ß√£o da fun√ß√£o get_estado_celula
 
 int get_estado_celula(int x, int y){
 	if(y<0||y>=ALTURA_MUNDO||x<0||x>=LARGURA_MUNDO){
@@ -57,17 +57,17 @@ int get_estado_celula(int x, int y){
 	return mundo[x][y];
 }
 
-// 1.8 ImplementaÁ„o da funÁ„o set estado de celula
+// 1.8 Implementa√ß√£o da fun√ß√£o set estado de celula
 	
 	void set_estado_celula(int x, int y, int estado){
 		if(y<0||y>=ALTURA_MUNDO||x<0||x>=LARGURA_MUNDO){
-			fprintf(stderr,"erro: cordenadas (%d,%d) s„o invaludas. \n",x,y);
+			fprintf(stderr,"erro: cordenadas (%d,%d) s√£o invaludas. \n",x,y);
 			abort();
 		}
-		mundo[x][y]=estado;
+		proximos_estados[x][y]=estado;
 	}
 	
-// 1.9 ImplementaÁ„o da funÁ„o finalizar _evoluÁ„o
+// 1.9 Implementa√ß√£o da fun√ß√£o finalizar _evolu√ß√£o
 	void finalizar_evolucao(void){
 		int i,j;
 		for(i=0;i<LARGURA_MUNDO; i++)
@@ -79,7 +79,7 @@ int get_estado_celula(int x, int y){
 		
 		
 	}
-// 1.10 ImplementaÁ„o da funÁ„o imprimir Mundo
+// 1.10 Implementa√ß√£o da fun√ß√£o imprimir Mundo
 
 	void imprimir_mundo(void){
 		char mundostr[2*LARGURA_MUNDO+2];
