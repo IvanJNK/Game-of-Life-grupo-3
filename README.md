@@ -19,10 +19,12 @@ função dos estados de suas células vizinhas na geração actual.
 Em um mundo 2-D, os vizinhos de uma célula são aquelas 8 células vertical,
 horizontal ou diagonalmente adjacentes a essa célula.
 O conjunto de regras de Conway é resumido como:
-1. Uma célula viva com menos de dois vizinhos vivos morre.
-2. Uma célula viva com mais de três vizinhos vivos também morre.
-3. Uma célula viva com exactamente dois ou três vizinhos vivos vive.
-4. Uma célula morta com exactamente três vizinhos vivos torna-se viva.
+<ol>
+<li>Uma célula viva com menos de dois vizinhos vivos morre.</li> 
+<li>Uma célula viva com mais de três vizinhos vivos também morre.</li>
+<li>Uma célula viva com exactamente dois ou três vizinhos vivos vive.</li>
+<li>Uma célula morta com exactamente três vizinhos vivos torna-se viva.</li>
+</ol>
 Neste trabalho, implementaremos o Jogo da Vida de Conway, com a pequena
 restricção de que nosso mundo 2-D é finito.
 Os vizinhos de uma célula na borda do mundo que estaria além da borda são
