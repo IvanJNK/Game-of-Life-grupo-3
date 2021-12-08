@@ -46,7 +46,7 @@ int num_vizinhos(int x, int y){
 	int i,j,v=0;
 	for(j=-1;j<=1;j++)
 		for(i=-1;i<=1;i++)
-			if((i==0&&j==0)&&get_estado_celula(x+i,y+j)==VIVA)
+			if(!(i==0&&j==0)&&get_estado_celula(x+i,y+j)==VIVA)
 				v++;
 	return v;
 }
