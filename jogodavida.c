@@ -61,7 +61,7 @@ int get_estado_celula(int x, int y){
 	
 	void set_estado_celula(int x, int y, int estado){
 		if(y<0||y>=ALTURA_MUNDO||x<0||x>=LARGURA_MUNDO){
-			fprintf(stderr,"erro: cordenadas (%d,%d) são invaludas. \n",x,y);
+			fprintf(stderr,"erro: coordenadas (%d,%d) são invalidas. \n",x,y);
 			abort();
 		}
 		proximos_estados[x][y]=estado;
